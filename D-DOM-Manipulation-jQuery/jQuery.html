@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+</head>
+<body>
+<h1 id="firstH1">jQuery..!</h1>
+<h1>jQuery..Hello</h1>
+<h2>What is jQuery and How it works.?</h2>
+<p id="para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aliquam architecto assumenda blanditiis
+    consequuntur deleniti dolorum, eius error fuga illo ipsam mollitia, perferendis provident ratione sunt tempora
+    tempore ut.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda blanditiis eligendi exercitationem expedita,
+    harum id laboriosam laborum laudantium magni natus, nulla optio pariatur perferendis placeat quia quis vel
+    voluptatum. Beatae.</p>
+<input placeholder="Input Something" id="txtInput" type="text">
+<button id="btnOne">UP</button>
+<button id="btnTwo">Down</button>
+<ul>
+    <li>IJSE</li>
+    <li class="list">GDSE</li>
+    <li id="l3">CMJD</li>
+    <li class="list">RMAD</li>
+</ul>
+<h2>Hello there</h2>
+<img src="" alt="IJSE" width="500px">
+
+<script src="assets/js/jquery-3.6.1.min.js"></script> <!--import jQuery library-->
+<script>
+    // document.querySelector("h1").style.color='red';//js way
+    // $('h1').css('color','red');
+
+    // $('h1');// this is how to select an element in jQuery
+
+
+    /*we can also change the selector as we wanted*/
+    // var RS =jQuery.noConflict();
+
+    // $()// not recognised
+
+    // RS(); now you have to use this way to select element
+
+    // RS("h2").css('color','green');
+
+
+    //What we can put inside jQuery selector
+
+    // $('h1').css('color', 'red'); // select all h1 in the dom and apply the color red (type selector)
+
+    // $("#para").css("font-size",'30px'); //(id selector is also working)
+
+    // $(".list").css('color','red'); // class selector
+
+    // $('[id]').css('border','2px solid red'); // Attribute selector
+
+    // $("li:first-child").css('color','green'); // Pseudo class also work
+
+
+    //What about CSS combinators.? are they work with jQuery.?
+    // $("body h1").css('color', 'red'); // descendent combinator
+    // $("ul>li").css('font-size', '50px');// child combinator
+    // $("h2+p").css('color', 'green'); // adjacent combinator
+    // $("h1~h2").css('border', '2px solid red'); // general siblings
+
+    // what about grouping selector.?
+    // $('h1,h2').css('color','red'); // working
+
+
+    //how to remove an element from dom using jQuery
+    // $('h1').remove(); // this is how to do it using jQuery
+
+
+    //how to get the text of an element
+    $("#firstH1").text(); // return the text of selected h1
+
+
+    //how to set the text of an element
+    $("#firstH1").text("Institute of Java and Software Engineering");// this is how to change a text in an element
+
+
+
+    //how to change the styles
+    $("li").css('color', 'red'); // first para (css property) // second para (css value)
+    $("li").css('font-size', '40px'); // first para (css property) // second para (css value)
+
+
+    //how to get values from text fields
+    $('input').val(); // returns the text field input value
+
+    //how to set values to a text field
+    $('input').val("IJSE"); // can set value to the input field
+
+
+
+    //how to change attributes in jQuery
+    $('img').attr('src','https://www.ijse.lk/images/logos/ijse.png'); // change attribute value
+
+    $('img').attr('src'); // get attribute value
+
+
+
+    //how to write down an event using jQuery
+    // $('button').click(function(){
+    //     alert("hello");
+    // });
+
+
+    // How to add elements to dom
+    //append
+    //prepend
+
+    // add to the bottom of selected element
+    $("ul").append("<li>A</li>");
+    $("ul").append("<li>B</li>");
+
+    //add to the top of the selected element
+    $("ul").prepend("<li>C</li>");
+    $("ul").prepend("<li>D</li>");
+
+
+    // first select the button and add a click event
+    $("#btnOne").click(function(){
+        $('ul').prepend('<li>'+$("#txtInput").val()+'</li>');
+    });
+
+    $("#btnTwo").click(function(){
+        $('ul').append('<li>'+$("#txtInput").val()+'</li>');
+    });
+
+
+
+
+</script>
+</body>
+</html>
