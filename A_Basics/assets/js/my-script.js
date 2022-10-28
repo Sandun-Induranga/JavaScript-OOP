@@ -480,13 +480,27 @@ console.log(Object)
 *
 * There is a method called prototype in Object
 *
-* prototype is a object that pre defined in Object function
+* prototype is a object that pre defined in Object function (Use to manage inheritance hierarchy)
 *
 * proto is a object that use to view properties in the Object
+*
+* The responsible of prototype is linked with functions
+*
+* prototype is only for functions, But __proto__ is available in object, functions, prototype
+*
+* proto used to view where they inherited in objects, prototypes and functions
+*
+*
+* -------------------------------------------------
+* console.log(Object.create(Function.prototype));
+* console.log(Object.create(Object.prototype));
+*
+*
 *
 * */
 
 // diagram : https://www.autodraw.com/share/D8VLOJ4X0VRG
+
 
 Object.prototype;
 console.dir(Object) // Can view properties in a object by using this
