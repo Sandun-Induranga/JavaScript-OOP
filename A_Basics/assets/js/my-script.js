@@ -467,4 +467,13 @@ console.log(Object)
 *
 * In java, We inherited properties and methods by using the keyword "extend". But In js We shout use prototype.
 *
+* In JS
+* function A                                            function B
+*   |                                                      |
+* Prototype  --------------------------------------->  Prototype
+*
+* In Java
+*
+* class A    --------------  extends  -------------->    class B
+*
 * */
