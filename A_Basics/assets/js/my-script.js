@@ -467,13 +467,26 @@ console.log(Object)
 *
 * In java, We inherited properties and methods by using the keyword "extend". But In js We shout use prototype.
 *
-* In JS
+*                       --- In JS
 * function A                                            function B
-*   |                                                      |
-* Prototype  --------------------------------------->  Prototype
+*     |                                                     |
+* [Prototype]  ------------------------------------->  [Prototype]
 *
-* In Java
+*
+*
+*                       --- In Java
 *
 * class A    --------------  extends  -------------->    class B
 *
+* There is a method called prototype in Object
+*
+* prototype is a object that pre defined in Object function
+*
+* proto is a object that use to view properties in the Object
+*
 * */
+
+// diagram : https://www.autodraw.com/share/D8VLOJ4X0VRG
+
+Object.prototype;
+console.dir(Object) // Can view properties in a object by using this
