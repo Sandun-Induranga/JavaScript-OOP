@@ -450,3 +450,7 @@ function Car(make1, year1) {
 }
 
 var car = new Car("BMW", "2022");
+
+car.setMake("Honda Civic");
+
+console.log(car.getMake());
