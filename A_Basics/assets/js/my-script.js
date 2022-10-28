@@ -501,11 +501,32 @@ console.log(Object)
 * Object.prototype contributes to all functions and objects
 *
 *
+* --- Object.prototype.__proto__ is null because the Object is the top in hierarchy. ---
 *
 * */
 
 // diagram : https://www.autodraw.com/share/D8VLOJ4X0VRG
 
 
-Object.prototype;
-console.dir(Object) // Can view properties in a object by using this
+// Object.prototype;
+// console.dir(Object) // Can view properties in a object by using this
+
+// ***********************************    Inheritance    *************************************
+
+// function Vehicle () {
+//     this.make = "BMW";
+//     this.year = "2022";
+//     this.park = function (){
+//         console.log(`${this.make} - ${this.year} parked`);
+//     }
+// }
+//
+// // Car.prototype = Vehicle.prototype;
+// Car.prototype = new Vehicle(); // Method 1
+// Car.prototype.__proto__ = Vehicle.prototype; // Method 2
+//
+// function Car(){
+//     this.id = "200";
+// }
+
+
