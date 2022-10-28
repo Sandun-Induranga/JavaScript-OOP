@@ -428,29 +428,34 @@ console.log("Hello there I'm from the console")
 *
 *  */
 
-function Car(make1, year1) {
-    let make = make1;
-    let year = year1;
 
-    this.setMake = function setMake(make1) {
-       make = make1;
-    }
+/* Encapsulation by using JS */
 
-    this.setYear = function setYear(year1) {
-        year = year1;
-    }
+// function Car(make1, year1) {
+//     let make = make1;
+//     let year = year1;
+//
+//     this.setMake = function setMake(make1) {
+//        make = make1;
+//     }
+//
+//     this.setYear = function setYear(year1) {
+//         year = year1;
+//     }
+//
+//     this.getMake = function getMake() {
+//         return make;
+//     }
+//
+//     this.getYear = function getYear() {
+//         return year;
+//     }
+// }
+//
+// var car = new Car("BMW", "2022");
+//
+// car.setMake("Honda Civic");
+//
+// console.log(car.getMake());
 
-    this.getMake = function getMake() {
-        return make;
-    }
 
-    this.getYear = function getYear() {
-        return year;
-    }
-}
-
-var car = new Car("BMW", "2022");
-
-car.setMake("Honda Civic");
-
-console.log(car.getMake());
