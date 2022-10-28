@@ -495,6 +495,11 @@ console.log(Object)
 * console.log(Object.create(Function.prototype));
 * console.log(Object.create(Object.prototype));
 *
+* Function.prototype.__proto__ == Object.prototype // true
+* Object.prototype.__proto__ == Object.prototype  // true
+*
+* Object.prototype contributes to all functions and objects
+*
 *
 *
 * */
