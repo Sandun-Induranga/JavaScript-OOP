@@ -431,24 +431,26 @@ console.log("Hello there I'm from the console")
 
 /* Encapsulation by using JS */
 
+/* Usually put __ before variable to represent variable is a private one */
+
 // function Car(make1, year1) {
-//     let make = make1;
-//     let year = year1;
+//     let __make = make1;
+//     let __year = year1;
 //
 //     this.setMake = function setMake(make1) {
-//        make = make1;
+//        __make = make1;
 //     }
 //
 //     this.setYear = function setYear(year1) {
-//         year = year1;
+//         __year = year1;
 //     }
 //
 //     this.getMake = function getMake() {
-//         return make;
+//         return __make;
 //     }
 //
 //     this.getYear = function getYear() {
-//         return year;
+//         return __year;
 //     }
 // }
 //
@@ -458,4 +460,11 @@ console.log("Hello there I'm from the console")
 //
 // console.log(car.getMake());
 
+console.log(Object)
 
+/*
+* *************************************************    Inheritance    ******************************************************
+*
+* In java, We inherited properties and methods by using the keyword "extend". But In js We shout use prototype.
+*
+* */
