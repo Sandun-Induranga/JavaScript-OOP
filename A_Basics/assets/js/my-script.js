@@ -565,7 +565,7 @@ console.log("Hello there I'm from the console")
 // vehicle.park();
 
 
-// **********    Inheritance    **************
+// **********    Encapsulation    **************
 
 // class Vehicle {
 //     #make;
@@ -604,3 +604,31 @@ console.log("Hello there I'm from the console")
 // console.log(vehicle.getMake());
 // console.log(vehicle.getYear());
 
+
+
+// **********    inheritance    **************
+
+// class Vehicle {
+//     make;
+//     year;
+//     constructor(make, year) {
+//         this.make = make;
+//         this.year = year;
+//     }
+//     park(){
+//         console.log(`${this.make} - ${this.year} is parked`)
+//     }
+// }
+//
+//
+// class Car extends Vehicle{
+//     constructor(make, year, wheel) {
+//         super(make,year);
+//         this.wheel = wheel;
+//     }
+// }
+//
+//
+// var car = new Car("BMW","2022",4);
+//
+// console.log(car);
