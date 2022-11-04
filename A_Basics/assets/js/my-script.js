@@ -530,3 +530,20 @@ console.log(Object)
 // }
 
 
+// function Animal (name, sound) {
+//     this.name = name;
+//     this.sound = sound;
+//     this.cry = function (){
+//         console.log(`${this.name} is ${this.sound}`);
+//     }
+// }
+//
+// function Cat(name, sound){
+//     Animal.apply(this,arguments);
+// }
+//
+// // Cat.prototype = new Animal(); // Method 2
+//
+// var cat = new Cat("Dog", "Barked");
+//
+// cat.cry();
