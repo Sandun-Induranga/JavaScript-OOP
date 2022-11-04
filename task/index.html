@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+    <style>
+        div {
+            border: 1px solid black;
+            height: 500px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="context"></div>
+<button id="btnStart">Start</button>
+<button id="btnStop">Stop</button>
+
+
+<script src="jquery-3.6.1.min.js"></script>
+<script>
+
+    /*
+    * *****************************    Timers    ********************************
+    *
+    * setTimeOut();  // Invoke a method after some milliseconds
+    * setInterval();
+    *
+    * */
+
+    let clicked = false;
+    $("#btnStop").click(function () {
+        clicked = true;
+    })
+    var i = 0;
+
+    $("#btnStart").click(function () {
+        var colors = ["blue", "red", "green"];
+        function loop() {
+            setTimeout(function () {
+                while (true) {
+                    $("#context").css("background", colors[i]);
+                    if (i == colors.length - 1) {
+                        i = 0;
+                    }
+                    if (clicked) {
+                        break;
+                    }
+                    i++;
+                }
+            }, 5000);
+        }
+
+        loop();
+    });
+
+
+</script>
+
+</body>
+</html>
