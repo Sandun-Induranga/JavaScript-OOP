@@ -547,3 +547,19 @@ console.log(Object)
 // var cat = new Cat("Dog", "Barked");
 //
 // cat.cry();
+
+// *********************************************    Class Based Objects    ***********************************************
+
+// class Vehicle {
+//     constructor(make, year) {
+//         this.make = make;
+//         this.year = year;
+//     }
+//     park(){
+//         console.log(`${this.make} - ${this.year} is parked`)
+//     }
+// }
+//
+// var vehicle = new Vehicle("BMW","2022");
+//
+// vehicle.park();
