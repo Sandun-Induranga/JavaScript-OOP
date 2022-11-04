@@ -460,7 +460,7 @@ console.log("Hello there I'm from the console")
 //
 // console.log(car.getMake());
 
-console.log(Object)
+// console.log(Object)
 
 /*
 * *************************************************    Inheritance    ******************************************************
@@ -563,3 +563,44 @@ console.log(Object)
 // var vehicle = new Vehicle("BMW","2022");
 //
 // vehicle.park();
+
+
+// **********    Inheritance    **************
+
+// class Vehicle {
+//     #make;
+//     #year;
+//     constructor(make, year) {
+//         this.#make = make;
+//         this.#year = year;
+//     }
+//     park(){
+//         console.log(`${this.#make} - ${this.#year} is parked`)
+//     }
+//
+//     setMake(make){
+//         this.#make = make;
+//     }
+//
+//     setYear(year){
+//         this.#year = year;
+//     }
+//
+//     getMake(){
+//         return this.#make;
+//     }
+//
+//     getYear(){
+//         return this.#year;
+//     }
+// }
+//
+// var vehicle = new Vehicle("BMW","2022");
+//
+// vehicle.park();
+//
+// vehicle.setMake("Honda Civic");
+// vehicle.setYear("2022");
+// console.log(vehicle.getMake());
+// console.log(vehicle.getYear());
+
