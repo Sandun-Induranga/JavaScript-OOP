@@ -25,36 +25,47 @@
     * *****************************    Timers    ********************************
     *
     * setTimeOut();  // Invoke a method after some milliseconds
-    * setInterval();
+    * setInterval(); // Invoke the method infinitely after some milliseconds
     *
     * */
 
-    let clicked = false;
-    $("#btnStop").click(function () {
-        clicked = true;
-    })
+    class Color {
+        color;
+    }
+
+    let interval;
+    let color = new Color();
     var i = 0;
+    var started = false;
+    var stopped = false;
 
-    $("#btnStart").click(function () {
-        var colors = ["blue", "red", "green"];
-        function loop() {
-            setTimeout(function () {
-                while (true) {
-                    $("#context").css("background", colors[i]);
-                    if (i == colors.length - 1) {
-                        i = 0;
-                    }
-                    if (clicked) {
-                        break;
-                    }
-                    i++;
-                }
-            }, 5000);
-        }
-
-        loop();
+    var colors = ["blue", "red", "green"];
+    $("#btnStop").click(function () {
+        stopped = true;
+        clearInterval(interval);
     });
 
+    $("#btnStart").click(function () {
+        if (!started || stopped) {
+            started = true;
+            interval = setInterval(changeColor, 400);
+            interval();
+        }
+    });
+
+    // method 2
+    $("#btnStart").click(function () {
+        clearInterval(interval);
+        interval = setInterval(changeColor, 400);
+        interval();
+    });
+
+    function changeColor() {
+        if (i == colors.length) i = 0;
+        color.color = colors[i];
+        $("#context").css("background", color.color);
+        i++;
+    }
 
 </script>
 
