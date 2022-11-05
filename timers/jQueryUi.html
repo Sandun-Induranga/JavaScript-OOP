@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="assets/jquery-ui.min.css">
+    <style>
+        section{
+            width: 97vw;
+            height: 97vh;
+        }
+
+        div{
+            width: 10vw;
+            height: 10vh;
+            background: #003eff;
+        }
+        aside{
+            width: 20vw;
+            height: 20vh;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <div></div>
+    <aside></aside>
+</section>
+<script src="assets/jquery-3.6.1.min.js"></script>
+<script src="assets/jquery-ui.min.js"></script>
+<script>
+    $("div").draggable();
+    $("aside").droppable(function () {
+        this.css("background", "red");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+    <style>
+        #context {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+
+        #context1, #context2 {
+            position: relative;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 550px;
+            height: 100px;
+        }
+
+        button {
+            font-size: 2em;
+            margin: 10px;
+        }
+
+        #nameZone {
+            display: flex;
+        }
+
+        #nameZone > div {
+            font-size: 2em;
+            margin: 10px;
+            border-radius: 5px;
+            height: 50px;
+            color: white;
+            padding: 5px;
+        }
+
+        input{
+            width: 100%;
+            height: 100%;
+            font-size: 2em;
+        }
+
+        main{
+            display: flex;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+
+<section id="context">
+    <div id="context1">
+        <input id="txtName" type="text">
+    </div>
+    <div id="context2">
+        <input id="txtColor" type="color">
+    </div>
+</section>
+
+<section>
+    <button id="btnAdd">Add</button>
+</section>
+
+<main>
+
+    <section id="nameZone">
+
+    </section>
+    <section>
+        <img src="assets/free-store-icon-2017-thumb.png" alt="">
+    </section>
+
+</main>
+
+<script src="assets/jquery-3.6.1.min.js"></script>
+<script>
+    let names = ["Sandun", "Ashan", "Nimesh"];
+    let colors = ["blue", "yellow", "red"];
+    let id;
+    let i = 0;
+
+    $("#btnAdd").click(function () {
+        names.push($("#txtName").val());
+        colors.push($("#txtColor").val());
+        clearInterval(id);
+        id = setInterval(animation, 1000);
+        id();
+    });
+
+    $(function () {
+        id = setInterval(animation, 1000);
+        id();
+    });
+
+    function animation() {
+        var removedName = names.shift();
+        var removedColor = colors.shift();
+        colors.push(removedColor);
+        names.push(removedName);
+        $("#nameZone").empty();
+        for (let j = 0; j < names.length; j++) {
+            $("#nameZone").append(`<div style="background: ${colors[j]}">${names[j]}</div>`);
+        }
+    }
+
+</script>
+
+</body>
+</html>

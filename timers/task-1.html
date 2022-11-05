@@ -18,7 +18,7 @@
 <button id="btnStop">Stop</button>
 
 
-<script src="jquery-3.6.1.min.js"></script>
+<script src="assets/jquery-3.6.1.min.js"></script>
 <script>
 
     /*
@@ -29,12 +29,7 @@
     *
     * */
 
-    class Color {
-        color;
-    }
-
     let interval;
-    let color = new Color();
     var i = 0;
     var started = false;
     var stopped = false;
@@ -45,6 +40,7 @@
         clearInterval(interval);
     });
 
+    // Method 1
     $("#btnStart").click(function () {
         if (!started || stopped) {
             started = true;
@@ -53,12 +49,12 @@
         }
     });
 
-    // method 2
-    $("#btnStart").click(function () {
-        clearInterval(interval);
-        interval = setInterval(changeColor, 400);
-        interval();
-    });
+    // Method 2
+    // $("#btnStart").click(function () {
+    //     clearInterval(interval);
+    //     interval = setInterval(changeColor, 400);
+    //     interval();
+    // });
 
     function changeColor() {
         if (i == colors.length) i = 0;

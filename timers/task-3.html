@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+    <style>
+        section {
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        aside {
+            display: flex;
+            width: 97vw;
+            height: 70vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<aside>
+    <section id="sec1"></section>
+    <section id="sec2"></section>
+    <section id="sec3"></section>
+    <section id="sec4"></section>
+    <section id="sec5"></section>
+</aside>
+
+<button id="btnStart">Start</button>
+<button id="btnStop">End</button>
+
+<script src="assets/jquery-3.6.1.min.js"></script>
+
+<script>
+    let id;
+    let colors = ["white", "white", "white", "white", "white", "red", "#aa1e1e", "#ba3b3b", "#bd6464", "#9a8686"]
+    let rightColors = ["red", "#aa1e1e", "#ba3b3b", "#bd6464", "#9a8686", "white", "white", "white", "white", "white"]
+    let count = 0;
+
+    function animation() {
+        if (count <= colors.length) {
+            c1();
+        } else {
+            c2();
+            count = 0;
+        }
+        count++;
+    }
+
+    function c1() {
+        var removedColor = colors.shift();
+        colors.push(removedColor);
+        for (let j = 1; j < 6; j++) {
+            $("#sec" + j).css("background", colors[j - 1]);
+        }
+    }
+
+    function c2() {
+        if (count>=colors.length) count = 0;
+        var removedColor = rightColors.pop();
+        rightColors.unshift(removedColor);
+        for (let j = 1; j < 6; j++) {
+            $("#sec" + j).css("background", rightColors[j - 1]);
+        }
+    }
+
+    $(function () {
+        id = setInterval(animation, 500);
+        id();
+    });
+
+    $("#btnStop").click(function () {
+        clearInterval(id);
+    })
+
+    $("#btnStart").click(function () {
+        clearInterval(id);
+        id = setInterval(animation, 500);
+        id()
+    })
+
+</script>
+
+</body>
+</html>
